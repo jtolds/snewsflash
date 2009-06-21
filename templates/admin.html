@@ -1,0 +1,17 @@
+<html>
+<body>
+<h1>Admin</h1>
+
+{% for feed in feeds %}
+<form method="post"><input type="hidden" name="action" value="delete"/><input type="hidden" name="id" value="{{feed.key.id}}"/>
+{{feed.url}} {{feed.key.id}} {{feed.last_content}} <input type="submit" value="delete"/></form>
+{% endfor %}
+
+<form method="post">
+<input type="hidden" name="action" value="add feed"/>
+<input type="text" name="url"/>
+<input type="submit" value="Add"/>
+</form>
+
+</body>
+</html>
