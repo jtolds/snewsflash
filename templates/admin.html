@@ -4,7 +4,7 @@
 
 {% for feed in feeds %}
 <form method="post"><input type="hidden" name="action" value="delete"/><input type="hidden" name="id" value="{{feed.key.id}}"/>
-{{feed.url}} {{feed.key.id}} {{feed.last_content}} <input type="submit" value="delete"/></form>
+{{feed.url}} <input type="submit" value="delete"/></form>
 {% endfor %}
 
 <form method="post">

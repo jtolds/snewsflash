@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-MINIMUM_RECHECK_TIME = 600 # 10 minutes, in seconds
+MINIMUM_RECHECK_TIME = 600 # seconds
 
 import cgi, os, datetime, wsgiref.handlers
 
@@ -13,7 +13,7 @@ from google.appengine.api import urlfetch
 
 class Feed(db.Model):
   url = db.StringProperty()
-  last_content = db.Text()
+  last_content = db.TextProperty()
 
 def adminonly(handler_method):
   """Decorator that requires the requesting user to be an admin."""
